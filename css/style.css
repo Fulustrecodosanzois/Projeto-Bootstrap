@@ -1,3 +1,5 @@
+/* PÁGINA HOME */
+
 .bloco {
   background-color: #ccc;
   height: 50vh;
@@ -18,4 +20,11 @@
 .social i:hover {
   color: #0d67fd;
   transform: scale(2);
+}
+
+/* EFEITO MENU ATIVO */
+
+.active {
+  border-bottom: 1px solid #fff;
+  transition: all 0.2s linear;
 }
