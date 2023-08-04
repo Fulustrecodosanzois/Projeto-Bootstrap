@@ -1,30 +1,34 @@
 /* PÁGINA HOME */
-
 .bloco {
   background-color: #ccc;
   height: 50vh;
 }
-
 .bloco img {
   min-width: 800px;
 }
-
 .w-200 {
   width: 200px;
 }
-
 .w-500 {
   width: 500px;
 }
-
 .social i:hover {
-  color: #0d67fd;
-  transform: scale(2);
+  color: #0d6efd;
+  transform: scale(1.2);
 }
 
-/* EFEITO MENU ATIVO */
-
+/* EFEITO MENU ATIVO*/
 .active {
   border-bottom: 1px solid #fff;
-  transition: all 0.2s linear;
+}
+
+/* PÁGINA CADASTRO*/
+.altura {
+  height: 300px;
+  overflow-y: scroll;
+}
+/* fonte do google */
+
+.fonte {
+  font-family: 'Borel', cursive;
 }
