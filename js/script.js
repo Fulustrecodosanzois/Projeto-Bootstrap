@@ -99,7 +99,7 @@ btnEscolaridade.addEventListener("click", (evento)=>{
     // console.log(evento)
     evento.preventDefault()// a função irá impedir o comportamento padrão do botão
 
-    console.log(escolaridade)
+    console.log(escolaridade)// se colocar a posição [] irá selecionar a opção equivalente
 
 })
 
