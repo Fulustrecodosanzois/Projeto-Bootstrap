@@ -49,17 +49,57 @@ endereco.addEventListener("blur", function () {
 let email = document.querySelector("#email")
 let conf = document.querySelector("#confirmar")
 
-let minusculo = email.value.toLowerCase() //torna o conteúdo minuscula
-
 email.addEventListener("keyup", function(){
+    let minusculo = email.value.toLowerCase() //torna o conteúdo minuscula
     conf.value = email.value
-    if(minusculo.indexOf("@") == -1 || minusculo.indexOf(".com") == -1){
-
+    if(minusculo.indexOf('@') == -1 || minusculo.indexOf('.com') == -1){
+       console.log("email inválido")
+       //email.style.border = "2px solid red"
+       email.classList.add("border-danger")
+       email.classList.remove("border-success")
     }
     else{
-
+       console.log("email válido");
+       //email.style.border = "2px solid green"
+       email.classList.add("border-success")
+       email.classList.remove("border-danger")
     }
     console.log(email.value.indexOf("@")) /*IndexOf retorna a posição do caracter de texto */
+
+})
+
+let senha = document.querySelector("#senha")
+let btn_olho = document.querySelector(".fa-eye")
+
+// isto é uma arrow function, forma resumida da função anônima
+btn_olho.addEventListener("click", () => {
+    if(btn_olho.classList.contains("fa-eye")){
+        console.log("A classe existe")
+        btn_olho.classList.remove("fa-eye")
+        btn_olho.classList.add("fa-eye-slash")
+
+        //colocar um atributo novo
+        senha.setAttribute("type", "text")
+    }
+    else{   
+        console.log("A classe não existe")
+        btn_olho.classList.remove("fa-eye-slash")
+        btn_olho.classList.add("fa-eye")
+
+        senha.setAttribute("type", "password")
+    }
+})
+
+//PEGANDO DADOS DE CAMPOS CHECK E RADIOS
+
+let escolaridade = document.querySelectorAll("input[name=escolaridade]")
+let btnEscolaridade = document.querySelector("#btnEscolaridade")
+
+btnEscolaridade.addEventListener("click", (evento)=>{
+    // console.log(evento)
+    evento.preventDefault()// a função irá impedir o comportamento padrão do botão
+
+    console.log(escolaridade)
 
 })
 
