@@ -36,13 +36,17 @@ idade.addEventListener("blur", function () {
 let endereco = document.querySelector("input[name=end]") /* pesquisa um seletor (input) que tenha o valor "name" com end*/
 endereco.addEventListener("blur", function () {
     // console.log(endereco.value.length)
-    if (endereco.value.length >= 35) {
-        alert("A quantidade de letras excede 35 letras")
-        endereco.style.border = "2px solid red"
-    }
-    else {
-        alert("O endereço esta menor")
-        endereco.style.border = "2px solid yellow"
+
+    if(endereco.value != "") {
+
+        if (endereco.value.length >= 35) {
+            alert("A quantidade de letras excede 35 letras")
+            endereco.style.border = "2px solid red"
+        }
+        else {
+            alert("O endereço esta menor")
+            endereco.style.border = "2px solid yellow"
+        }
     }
 })
 
@@ -167,4 +171,35 @@ trabalho.addEventListener("change", () => {
         }
     }
    }
+})
+
+// ESCOLHA DA COR
+
+let cor = document.querySelector("#cor")
+cor.addEventListener("change", ()=>{
+    console.log(cor.value)
+    document.body.style.backgroundColor = cor.value
+})
+
+let mensagem = document.querySelector("#mensagem")
+let restante = document.querySelector("#restante")
+
+
+let limite = 20
+mensagem.addEventListener("keyup", ()=>{
+   // console.log(mensagem.value.length)
+    restante.textContent = mensagem.value.length
+    
+    mensagem.setAttribute("maxlength", limite)
+    console.log(restante.parentNode)
+
+    if(restante.textContent == 20){
+        mensagem.classList.add ("border-danger")
+        restante.parentNode.style.color = "red"
+    }
+    else{
+        mensagem.classList.remove("border-danger")
+        restante.parentNode.style.color = "black"
+    }
+
 })
