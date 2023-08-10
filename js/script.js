@@ -4,7 +4,6 @@ console.log("Só quem é dev vai descobrir!")
 
 let nome = document.querySelector("#nome")
 
-
 function exibirNome() {
     console.log(nome.value)
     if (nome.value == "") {
@@ -183,7 +182,6 @@ cor.addEventListener("change", ()=>{
 
 let mensagem = document.querySelector("#mensagem")
 let restante = document.querySelector("#restante")
-
 
 let limite = 20
 mensagem.addEventListener("keyup", ()=>{
