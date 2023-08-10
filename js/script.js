@@ -29,13 +29,13 @@ idade.addEventListener("blur", function () {
     }
     else {
         alert("Infelizmente você é menor de idade!")
-        window.location.href = "https://www.youtube.com/@PeppaPigPortuguesOficial/featured"
+        // window.location.href = "https://www.youtube.com/@PeppaPigPortuguesOficial/featured"
     }
 })
 
 let endereco = document.querySelector("input[name=end]") /* pesquisa um seletor (input) que tenha o valor "name" com end*/
 endereco.addEventListener("blur", function () {
-    console.log(endereco.value.length)
+    // console.log(endereco.value.length)
     if (endereco.value.length >= 35) {
         alert("A quantidade de letras excede 35 letras")
         endereco.style.border = "2px solid red"
@@ -99,7 +99,72 @@ btnEscolaridade.addEventListener("click", (evento)=>{
     // console.log(evento)
     evento.preventDefault()// a função irá impedir o comportamento padrão do botão
 
-    console.log(escolaridade)// se colocar a posição [] irá selecionar a opção equivalente
+    // console.log(escolaridade)// se colocar a posição [] irá selecionar a opção equivalente
 
+    for(var itens of escolaridade){
+        // console.log(itens)
+        if(itens.checked){
+            alert(`Sua escolaridade é ${itens.value}`)// isto é um template string é uma outra forma de concatenar texto com variável
+            // alert("sua escolaridade é "+itens.value)
+            confirm("Tem certeza?")
+            
+        }
+    }
+    
 })
 
+// CAMPO SWITCH
+
+let escolha = document.querySelector("#escolha")
+let contrato = document.querySelector("#contrato")
+
+contrato.classList.add("d-none")
+
+escolha.addEventListener("change", ()=> {
+    if(escolha.checked) {
+        contrato.classList.remove("d-none")
+        contrato.classList.remove("d-block")
+    }
+    else{
+        contrato.classList.remove("d-block")
+        contrato.classList.add("d-none")
+    }
+})
+
+let concordo = document.querySelector("#concordo")
+
+concordo.addEventListener("change", ()=>{
+    if(concordo.checked){
+        alert("Sua escolaridade foi selecionada!")
+
+    }
+    else{
+        alert("A opção foi desmarcada!")
+        let mensagem = prompt("Diga porque você desmarcou")//criar uma caixa de texto
+    }
+})
+
+// Caixa de seleção
+
+let trabalho = document.querySelector(".form-select")
+
+trabalho.addEventListener("change", () => {
+   // console.log(trabalho.options)
+
+   for(let itens of trabalho){
+    if(itens.selected){
+        //console.log(itens.value)
+        if(itens.value == "RH"){
+            trabalho.style.backgroundColor = "cyan"
+        }
+        if(itens.value == "Tecnologia"){
+            trabalho.style.backgroundColor = "blue"
+            trabalho.style.color = "white"
+        }
+        if(itens.value == "Financeiro"){
+            trabalho.style.backgroundColor = "purple"
+            trabalho.style.color = "white"
+        }
+    }
+   }
+})
