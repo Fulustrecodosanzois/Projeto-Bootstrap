@@ -11,6 +11,7 @@ async function carregarDados(){
     // o await é usado apenas em assincrono
     const resultado = await fetch(url)
     //fetch = pedi uma busca na url em parâmetro para puxar informações, e aguarda a informação 
+    // tento puxado os resultados, se converte para .json, abaixo:
     const dados = await resultado.json()// convertendo os dados da api(resultado) em .json a await é novamente usada para entregar as informações apenas quando tudo estiver carregado (código 200)
 
     // console.log(dados)
